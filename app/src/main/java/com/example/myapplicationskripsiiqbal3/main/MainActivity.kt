@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         lifecycleScope.launchWhenCreated {
             val host: NavHostFragment =
-                supportFragmentManager.findFragmentById(R.id.mainProjectNavHostFragment) as NavHostFragment
+                supportFragmentManager.findFragmentById(R.id.mainNavHostFragment) as NavHostFragment
             navController = host.navController
 
             val navGraph =
