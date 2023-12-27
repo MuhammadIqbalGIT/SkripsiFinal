@@ -5,6 +5,7 @@ import android.location.Location
 import androidx.appcompat.app.AppCompatDelegate
 import dagger.hilt.android.HiltAndroidApp
 
+
 @HiltAndroidApp
 class MyApplication : Application(){
     var mIsLogin = false

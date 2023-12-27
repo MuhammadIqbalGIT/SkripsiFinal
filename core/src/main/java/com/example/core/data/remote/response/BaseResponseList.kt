@@ -22,3 +22,15 @@ data class BaseResponseListV2<T>(
     @SerializedName("value")
     val value: List<T>? = emptyList(),
 )
+
+
+data class BaseResponseListV3<T>(
+    @SerializedName("errorCode")
+    var errorCode: Int,
+    @SerializedName("errorStatus")
+    var errorStatus: Boolean,
+    @SerializedName("errorMessage")
+    var errorMessage: String,
+    @SerializedName("value")
+    var value: ArrayList<T>?
+)

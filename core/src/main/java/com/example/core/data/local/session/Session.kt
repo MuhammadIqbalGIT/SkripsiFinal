@@ -29,102 +29,102 @@ private const val SESSION_PREFERENCES_NAME = "mss_merchant"
  * akan terjadi conflict/force close
  */
 
-class Session @Inject constructor(private val context: Context) {
+class Session @Inject constructor() {
 
-
-    private val name = "mss_ecommerce_pref"
-    private val mode = Context.MODE_PRIVATE
-
-    private val preferences = context.getSharedPreferences(name, mode)
-
-    private val appPreferences = AppPreferences(preferences)
-
-    //    Splash Screen Session
-    fun saveFtpUrl(urlFtp: String) {
-        appPreferences.setString(PREF_FTP, urlFtp)
-    }
-
-    fun getFtpUrl(): String =
-        appPreferences.getString(PREF_FTP, "")
-
-    fun saveLiveChatUrl(url: String) {
-        appPreferences.setString(PREF_LIVE_CHAT, url)
-    }
-
-    fun getLiveChatUrl(): String = appPreferences.getString(PREF_LIVE_CHAT, "")
-    //    Splash Screen Session
-
-    fun saveSessionCustomerID(customerID: Int) {
-        appPreferences.setInt(PREF_SESSION_CUSTOMER_ID, customerID)
-    }
-
-    fun getSessionCustomerID(): Int = appPreferences.getInt(PREF_SESSION_CUSTOMER_ID)
-
-    fun saveSessionCustomerName(name: String) {
-        appPreferences.setString(PREF_SESSION_CUSTOMER_NAME, name)
-    }
-
-    fun getSessionCustomerName(): String = appPreferences.getString(PREF_SESSION_CUSTOMER_NAME, "")
-
-    fun saveSessionKeyCode(code: String) {
-        appPreferences.setString(PREF_SESSION_KEY_CODE, code)
-
-        Log.d("datakeycode", code)
-    }
-
-    fun getSessionKeyCode(): String = appPreferences.getString(PREF_SESSION_KEY_CODE, "")
-
-    fun saveToken(token: String) = appPreferences.setString(PREF_SESSION_TOKEN, token)
-
-
-    fun getToken(): String = appPreferences.getString(PREF_SESSION_TOKEN, "")
-
-    fun getTokenNew(): String = appPreferences.getString(NEW_PREF_SESSION_TOKEN, "")
-    fun getTokenTimeNew(): String = appPreferences.getString(NEW_PREF_SESSION_TOKEN_DATE, "")
-    fun saveSessionUserCode(userCode: String) {
-        appPreferences.setString(PREF_SESSION_USER_CODE, userCode)
-    }
-
-    fun getUserCode(): String = appPreferences.getString(PREF_SESSION_USER_CODE, "")
-
-    fun updateToken(newToken: String, date: String) {
-        appPreferences.setString(NEW_PREF_SESSION_TOKEN, newToken)
-        appPreferences.setString(NEW_PREF_SESSION_TOKEN_DATE, date)
-    }
-
-    /**
-     * Delete Login Session
-     */
-    fun deleteAllSessionLogin() {
-        appPreferences.delete(PREF_SESSION_CUSTOMER_ID)
-        appPreferences.delete(PREF_SESSION_CUSTOMER_NAME)
-        appPreferences.delete(PREF_SESSION_TOKEN)
-        appPreferences.delete(PREF_SESSION_CART)
-        appPreferences.delete(PREF_SESSION_KEY_CODE)
-        appPreferences.delete(NEW_PREF_SESSION_TOKEN)
-        appPreferences.delete(NEW_PREF_SESSION_TOKEN_DATE)
-    }
-
-    /**
-     * Cart Session
-     */
-    fun saveSelectedCart(cartIdList: List<Long>) {
-        val gsonCart = Gson().toJson(cartIdList)
-
-        appPreferences.setString(PREF_SESSION_CART, gsonCart)
-    }
-
-    fun getSelectedCartList(): List<Long>? {
-        val temp = appPreferences.getString(PREF_SESSION_CART, "")
-
-        return if (temp.isNotEmpty()) {
-            return try {
-                val type = object : TypeToken<List<Long>>() {}.type
-                Gson().fromJson(temp, type)
-            } catch (e: Exception) {
-                listOf()
-            }
-        } else
-            listOf()
-    }
+//
+//    private val name = "mss_ecommerce_pref"
+//    private val mode = Context.MODE_PRIVATE
+//
+//    private val preferences = context.getSharedPreferences(name, mode)
+//
+//    private val appPreferences = AppPreferences(preferences)
+//
+//    //    Splash Screen Session
+//    fun saveFtpUrl(urlFtp: String) {
+//        appPreferences.setString(PREF_FTP, urlFtp)
+//    }
+//
+//    fun getFtpUrl(): String =
+//        appPreferences.getString(PREF_FTP, "")
+//
+//    fun saveLiveChatUrl(url: String) {
+//        appPreferences.setString(PREF_LIVE_CHAT, url)
+//    }
+//
+//    fun getLiveChatUrl(): String = appPreferences.getString(PREF_LIVE_CHAT, "")
+//    //    Splash Screen Session
+//
+//    fun saveSessionCustomerID(customerID: Int) {
+//        appPreferences.setInt(PREF_SESSION_CUSTOMER_ID, customerID)
+//    }
+//
+//    fun getSessionCustomerID(): Int = appPreferences.getInt(PREF_SESSION_CUSTOMER_ID)
+//
+//    fun saveSessionCustomerName(name: String) {
+//        appPreferences.setString(PREF_SESSION_CUSTOMER_NAME, name)
+//    }
+//
+//    fun getSessionCustomerName(): String = appPreferences.getString(PREF_SESSION_CUSTOMER_NAME, "")
+//
+//    fun saveSessionKeyCode(code: String) {
+//        appPreferences.setString(PREF_SESSION_KEY_CODE, code)
+//
+//        Log.d("datakeycode", code)
+//    }
+//
+//    fun getSessionKeyCode(): String = appPreferences.getString(PREF_SESSION_KEY_CODE, "")
+//
+//    fun saveToken(token: String) = appPreferences.setString(PREF_SESSION_TOKEN, token)
+//
+//
+//    fun getToken(): String = appPreferences.getString(PREF_SESSION_TOKEN, "")
+//
+//    fun getTokenNew(): String = appPreferences.getString(NEW_PREF_SESSION_TOKEN, "")
+//    fun getTokenTimeNew(): String = appPreferences.getString(NEW_PREF_SESSION_TOKEN_DATE, "")
+//    fun saveSessionUserCode(userCode: String) {
+//        appPreferences.setString(PREF_SESSION_USER_CODE, userCode)
+//    }
+//
+//    fun getUserCode(): String = appPreferences.getString(PREF_SESSION_USER_CODE, "")
+//
+//    fun updateToken(newToken: String, date: String) {
+//        appPreferences.setString(NEW_PREF_SESSION_TOKEN, newToken)
+//        appPreferences.setString(NEW_PREF_SESSION_TOKEN_DATE, date)
+//    }
+//
+//    /**
+//     * Delete Login Session
+//     */
+//    fun deleteAllSessionLogin() {
+//        appPreferences.delete(PREF_SESSION_CUSTOMER_ID)
+//        appPreferences.delete(PREF_SESSION_CUSTOMER_NAME)
+//        appPreferences.delete(PREF_SESSION_TOKEN)
+//        appPreferences.delete(PREF_SESSION_CART)
+//        appPreferences.delete(PREF_SESSION_KEY_CODE)
+//        appPreferences.delete(NEW_PREF_SESSION_TOKEN)
+//        appPreferences.delete(NEW_PREF_SESSION_TOKEN_DATE)
+//    }
+//
+//    /**
+//     * Cart Session
+//     */
+//    fun saveSelectedCart(cartIdList: List<Long>) {
+//        val gsonCart = Gson().toJson(cartIdList)
+//
+//        appPreferences.setString(PREF_SESSION_CART, gsonCart)
+//    }
+//
+//    fun getSelectedCartList(): List<Long>? {
+//        val temp = appPreferences.getString(PREF_SESSION_CART, "")
+//
+//        return if (temp.isNotEmpty()) {
+//            return try {
+//                val type = object : TypeToken<List<Long>>() {}.type
+//                Gson().fromJson(temp, type)
+//            } catch (e: Exception) {
+//                listOf()
+//            }
+//        } else
+//            listOf()
+//    }
 }

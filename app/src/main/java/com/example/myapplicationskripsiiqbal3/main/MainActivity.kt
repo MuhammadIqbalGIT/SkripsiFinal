@@ -14,8 +14,9 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.myapplicationskripsiiqbal3.R
 import com.example.myapplicationskripsiiqbal3.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
@@ -65,6 +66,16 @@ class MainActivity : AppCompatActivity() {
             binding.navView.setupWithNavController(navController)
         }
         //getUserCredential()
+//        if (savedInstanceState == null) {
+//            // Menambahkan LoginFragment ke dalam mainNavHostFragment
+//            val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainNavHostFragment) as NavHostFragment
+//            val navController = navHostFragment.navController
+//            navController.navigate(R.id.loginFragment)
+//
+//            // Menyembunyikan navView
+//            binding.navView.visibility = View.GONE
+//        }
+
     }
 
 
