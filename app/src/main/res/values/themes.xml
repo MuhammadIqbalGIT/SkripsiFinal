@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MyApplicationSkripsiIqbal3" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.MyApplicationSkripsiIqbal3" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
@@ -13,4 +13,11 @@
         <item name="android:padding">16dp</item>
         <item name="android:layout_margin">16dp</item>
     </style>
+
+
+    <style name="RoundedShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- 50% akan membuatnya bulat -->
+    </style>
+
 </resources>

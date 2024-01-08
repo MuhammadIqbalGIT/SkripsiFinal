@@ -3,18 +3,23 @@ package com.example.myapplicationskripsiiqbal3.main
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.myapplicationskripsiiqbal3.R
 import com.example.myapplicationskripsiiqbal3.databinding.ActivityMainBinding
+import com.example.myapplicationskripsiiqbal3.ui.addProduct.AddProductFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -23,7 +28,6 @@ class MainActivity : AppCompatActivity() {
     val NOTIFICATION_PERMISSION_CODE = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -42,20 +46,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        lifecycleScope.launchWhenCreated {
+        lifecycleScope.launch {
             val host: NavHostFragment =
                 supportFragmentManager.findFragmentById(R.id.mainNavHostFragment) as NavHostFragment
             navController = host.navController
 
-            val navGraph =
-                navController.navInflater.inflate(R.navigation.nav_main)
+            val navGraph = navController.navInflater.inflate(R.navigation.nav_main)
             navController.graph = navGraph
 
             navController.addOnDestinationChangedListener { controller, destination, arguments ->
                 if (destination.id == R.id.fragmentA3 ||
-//                    destination.id == R.id.listOpFragment ||
-//                    destination.id == R.id.invoiceProjectFragment ||
-//                    destination.id == R.id.billingProjectFragment ||
                     destination.id == R.id.fragmentB2
                 ) {
                     binding.navView.visibility = View.VISIBLE
@@ -65,17 +65,26 @@ class MainActivity : AppCompatActivity() {
             }
             binding.navView.setupWithNavController(navController)
         }
-        //getUserCredential()
-//        if (savedInstanceState == null) {
-//            // Menambahkan LoginFragment ke dalam mainNavHostFragment
-//            val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainNavHostFragment) as NavHostFragment
-//            val navController = navHostFragment.navController
-//            navController.navigate(R.id.loginFragment)
-//
-//            // Menyembunyikan navView
-//            binding.navView.visibility = View.GONE
-//        }
 
+        initEvent()
+    }
+
+    private fun initEvent() {
+        binding.fab.setOnClickListener {
+            navigateToFragmentA()
+        }
+    }
+
+    private fun navigateToFragmentA() {
+        val fragmentA = AddProductFragment() // Ganti dengan nama Fragment A yang sesuai
+        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+
+        // Membersihkan seluruh back stack sebelum menambahkan Fragment A
+        supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+
+        transaction.replace(R.id.mainNavHostFragment, fragmentA)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
 
@@ -92,10 +101,8 @@ class MainActivity : AppCompatActivity() {
                     // ...
                 } else {
                     // Permission denied, show message or handle error
-
                 }
             }
-            // Add more cases for handling other permission requests if needed
         }
     }
 }
