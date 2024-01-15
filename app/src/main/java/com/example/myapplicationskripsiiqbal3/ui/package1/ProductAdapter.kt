@@ -41,9 +41,13 @@ class ProductAdapter : ListAdapter<ProductModel, ProductAdapter.ProductViewHolde
     inner class ProductViewHolder(private val binding: FragmentProductItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ProductModel) {
-            binding.tvItemHargaProduk.text = item.harga.toInt().toString()
-            binding.tvItemNamaProduk.text = item.nama
-            binding.tvItemStock.text = item.stok.toInt().toString()
+
+            with(binding) {
+                tvItemHargaProduk.text = item.harga.toInt().toString()
+                tvItemNamaProduk.text = item.nama
+                tvItemStock.text = item.stok.toInt().toString()
+                tvNameBrand.text = item.namaBrand
+            }
         }
     }
 

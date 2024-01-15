@@ -58,9 +58,9 @@ class MainActivity : AppCompatActivity() {
                 if (destination.id == R.id.fragmentA3 ||
                     destination.id == R.id.fragmentB2
                 ) {
-                    binding.navView.visibility = View.VISIBLE
+                    binding.coordinatorLayout.visibility = View.VISIBLE
                 } else {
-                    binding.navView.visibility = View.GONE
+                    binding.coordinatorLayout.visibility = View.GONE
                 }
             }
             binding.navView.setupWithNavController(navController)
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToFragmentA() {
-        val fragmentA = AddProductFragment() // Ganti dengan nama Fragment A yang sesuai
+        val fragmentA = AddProductFragment()
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
 
         // Membersihkan seluruh back stack sebelum menambahkan Fragment A
