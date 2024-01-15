@@ -1,4 +1,4 @@
-package com.example.myapplicationskripsiiqbal3.ui.package1
+package com.example.myapplicationskripsiiqbal3.ui.product
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,7 +10,7 @@ import com.example.myapplicationskripsiiqbal3.databinding.FragmentProductItemBin
 
 class ProductAdapter : ListAdapter<ProductModel, ProductAdapter.ProductViewHolder>(diffCallback) {
 
-    lateinit var onDeleteClick: ((ProductModel) -> Unit)
+    lateinit var onCardListener: ((ProductModel) -> Unit)
 
     companion object {
         private val diffCallback = object : DiffUtil.ItemCallback<ProductModel>() {
@@ -47,6 +47,10 @@ class ProductAdapter : ListAdapter<ProductModel, ProductAdapter.ProductViewHolde
                 tvItemNamaProduk.text = item.nama
                 tvItemStock.text = item.stok.toInt().toString()
                 tvNameBrand.text = item.namaBrand
+
+                llProduk.setOnClickListener {
+                    onCardListener.invoke(item)
+                }
             }
         }
     }

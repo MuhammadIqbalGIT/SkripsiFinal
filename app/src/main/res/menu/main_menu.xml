@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/fragmentA3"
+        android:id="@+id/productFragment"
         android:icon="@drawable/ic_home"
         android:title="Produk" />
-<!--    <item-->
-<!--        android:id="@+id/listOpFragment"-->
-<!--        android:icon="@drawable/ic_project_home"-->
-<!--        android:title="List OP" />-->
 
-<!--    <item-->
-<!--        android:id="@+id/invoiceProjectFragment"-->
-<!--        android:icon="@drawable/ic_project_home"-->
-<!--        android:title="Invoice" />-->
-<!--    <item-->
-<!--        android:id="@+id/billingProjectFragment"-->
-<!--        android:icon="@drawable/ic_project_home"-->
-<!--        android:title="Billing" />-->
     <item
-        android:id="@+id/fragmentB2"
+        android:id="@+id/accountFragment"
         android:icon="@drawable/ic_home"
-        android:title="Profil" />
+        android:title="Akun" />
 
 </menu>

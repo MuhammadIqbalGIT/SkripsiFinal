@@ -13,34 +13,34 @@ import javax.inject.Inject
 class EmployeeInteractor @Inject constructor(val repository: IEmployeeRepository) :
     EmployeeUseCase {
 
-    override fun getEmployee(
-        origin: Origin,
-        employeeId: Int
-    ): Flow<Resource<List<EmployeeModel>>> {
-        return repository.getEmployee(origin, employeeId)
-    }
-    override fun getAllEmployee(origin: Origin): Flow<Resource<List<EmployeeModel>>> {
-        return repository.getAllEmployee(origin)
-    }
-
-    override fun getDataStaff(
-        origin: Origin
-    ): Flow<Resource<StaffModel>> {
-        return repository.getDataStaff(origin)
-    }
-
-
-    override fun getListDataStaff(
-        origin: Origin
-    ): Flow<Resource<List<ListStaffModel>>> {
-        return repository.getListDataStaff(origin)
-    }
-
-    override fun getPengguna(
-        origin: Origin
-    ): Flow<Resource<List<PenggunaModel>>> {
-        return repository.getPengguna(origin)
-    }
+//    override fun getEmployee(
+//        origin: Origin,
+//        employeeId: Int
+//    ): Flow<Resource<List<EmployeeModel>>> {
+//        return repository.getEmployee(origin, employeeId)
+//    }
+//    override fun getAllEmployee(origin: Origin): Flow<Resource<List<EmployeeModel>>> {
+//        return repository.getAllEmployee(origin)
+//    }
+//
+//    override fun getDataStaff(
+//        origin: Origin
+//    ): Flow<Resource<StaffModel>> {
+//        return repository.getDataStaff(origin)
+//    }
+//
+//
+//    override fun getListDataStaff(
+//        origin: Origin
+//    ): Flow<Resource<List<ListStaffModel>>> {
+//        return repository.getListDataStaff(origin)
+//    }
+//
+//    override fun getPengguna(
+//        origin: Origin
+//    ): Flow<Resource<List<PenggunaModel>>> {
+//        return repository.getPengguna(origin)
+//    }
 
 
 }

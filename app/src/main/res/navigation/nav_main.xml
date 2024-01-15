@@ -3,33 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/fragmentA3">
+    app:startDestination="@id/productFragment">
+
 
     <fragment
-        android:id="@+id/fragmentA3"
-        android:name="com.example.myapplicationskripsiiqbal3.ui.package1.FragmentA"
-        android:label="fragment_a"
-        tools:layout="@layout/fragment_a" />
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.myapplicationskripsiiqbal3.ui.product.detail.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="productId"
+            app:argType="integer" />
+    </fragment>
     <fragment
-        android:id="@+id/fragmentB2"
-        android:name="com.example.myapplicationskripsiiqbal3.ui.package2.FragmentB"
-        android:label="fragment_b"
-        tools:layout="@layout/fragment_b" />
+        android:id="@+id/productFragment"
+        android:name="com.example.myapplicationskripsiiqbal3.ui.product.ProductFragment"
+        android:label="ProductFragment" >
+        <action
+            android:id="@+id/action_productFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/fragmentC"
-        android:name="com.example.myapplicationskripsiiqbal3.ui.package3.FragmentC"
-        android:label="fragment_c"
-        tools:layout="@layout/fragment_c" />
-    <fragment
-        android:id="@+id/fragmentD"
-        android:name="com.example.myapplicationskripsiiqbal3.ui.package4.FragmentD"
-        android:label="fragment_d"
-        tools:layout="@layout/fragment_d" />
-    <fragment
-        android:id="@+id/fragmentE"
-        android:name="com.example.myapplicationskripsiiqbal3.ui.package5.FragmentE"
-        android:label="fragment_e"
-        tools:layout="@layout/fragment_e" />
+        android:id="@+id/accountFragment"
+        android:name="com.example.myapplicationskripsiiqbal3.ui.account.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
 
 
 </navigation>

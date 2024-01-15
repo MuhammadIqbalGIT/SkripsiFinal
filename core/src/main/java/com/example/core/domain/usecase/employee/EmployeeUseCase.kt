@@ -9,9 +9,9 @@ import com.example.core.domain.model.staff.StaffModel
 import kotlinx.coroutines.flow.Flow
 
 interface EmployeeUseCase {
-    fun getEmployee(origin: Origin, employeeId: Int): Flow<Resource<List<EmployeeModel>>>
-    fun getAllEmployee(origin: Origin): Flow<Resource<List<EmployeeModel>>>
-    fun getDataStaff(origin: Origin): Flow<Resource<StaffModel>>
-    fun getListDataStaff(origin: Origin): Flow<Resource<List<ListStaffModel>>>
-    fun getPengguna(origin: Origin): Flow<Resource<List<PenggunaModel>>>
+//    fun getEmployee(origin: Origin, employeeId: Int): Flow<Resource<List<EmployeeModel>>>
+//    fun getAllEmployee(origin: Origin): Flow<Resource<List<EmployeeModel>>>
+//    fun getDataStaff(origin: Origin): Flow<Resource<StaffModel>>
+//    fun getListDataStaff(origin: Origin): Flow<Resource<List<ListStaffModel>>>
+//    fun getPengguna(origin: Origin): Flow<Resource<List<PenggunaModel>>>
 }

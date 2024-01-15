@@ -15,56 +15,56 @@ import javax.inject.Inject
 
 class EmployeeRepository @Inject constructor(val source: EmployeeDataSource) :
     IEmployeeRepository {
-    override fun getEmployee(
-        origin: Origin,
-        employeeId: Int
-    ): Flow<Resource<List<EmployeeModel>>> {
-        return object : OnlyNetworkBoundResource<List<EmployeeModel>>() {
-            override suspend fun createCall(): Flow<ApiResponse<List<EmployeeModel>>> {
-                return source.getEmployee(origin, employeeId)
-            }
-        }.asFlow()
-    }
-
-
-    override fun getAllEmployee(origin: Origin): Flow<Resource<List<EmployeeModel>>> {
-        return object : OnlyNetworkBoundResource<List<EmployeeModel>>() {
-            override suspend fun createCall(): Flow<ApiResponse<List<EmployeeModel>>> {
-                return source.getAllEmployee(origin)
-            }
-        }.asFlow()
-    }
-
-    override fun getDataStaff(
-        origin: Origin
-    ): Flow<Resource<StaffModel>> {
-        return object : OnlyNetworkBoundResource<StaffModel>() {
-            override suspend fun createCall(): Flow<ApiResponse<StaffModel>> {
-                return source.getDataStaff(origin)
-            }
-        }.asFlow()
-    }
-
-
-    override fun getListDataStaff(
-        origin: Origin
-    ): Flow<Resource<List<ListStaffModel>>> {
-        return object : OnlyNetworkBoundResource<List<ListStaffModel>>() {
-            override suspend fun createCall(): Flow<ApiResponse<List<ListStaffModel>>> {
-                return source.getListDataStaff(origin)
-            }
-        }.asFlow()
-    }
-
-    override fun getPengguna(
-        origin: Origin
-    ): Flow<Resource<List<PenggunaModel>>> {
-        return object : OnlyNetworkBoundResource<List<PenggunaModel>>() {
-            override suspend fun createCall(): Flow<ApiResponse<List<PenggunaModel>>> {
-                return source.getPengguna(origin)
-            }
-        }.asFlow()
-    }
+//    override fun getEmployee(
+//        origin: Origin,
+//        employeeId: Int
+//    ): Flow<Resource<List<EmployeeModel>>> {
+//        return object : OnlyNetworkBoundResource<List<EmployeeModel>>() {
+//            override suspend fun createCall(): Flow<ApiResponse<List<EmployeeModel>>> {
+//                return source.getEmployee(origin, employeeId)
+//            }
+//        }.asFlow()
+//    }
+//
+//
+//    override fun getAllEmployee(origin: Origin): Flow<Resource<List<EmployeeModel>>> {
+//        return object : OnlyNetworkBoundResource<List<EmployeeModel>>() {
+//            override suspend fun createCall(): Flow<ApiResponse<List<EmployeeModel>>> {
+//                return source.getAllEmployee(origin)
+//            }
+//        }.asFlow()
+//    }
+//
+//    override fun getDataStaff(
+//        origin: Origin
+//    ): Flow<Resource<StaffModel>> {
+//        return object : OnlyNetworkBoundResource<StaffModel>() {
+//            override suspend fun createCall(): Flow<ApiResponse<StaffModel>> {
+//                return source.getDataStaff(origin)
+//            }
+//        }.asFlow()
+//    }
+//
+//
+//    override fun getListDataStaff(
+//        origin: Origin
+//    ): Flow<Resource<List<ListStaffModel>>> {
+//        return object : OnlyNetworkBoundResource<List<ListStaffModel>>() {
+//            override suspend fun createCall(): Flow<ApiResponse<List<ListStaffModel>>> {
+//                return source.getListDataStaff(origin)
+//            }
+//        }.asFlow()
+//    }
+//
+//    override fun getPengguna(
+//        origin: Origin
+//    ): Flow<Resource<List<PenggunaModel>>> {
+//        return object : OnlyNetworkBoundResource<List<PenggunaModel>>() {
+//            override suspend fun createCall(): Flow<ApiResponse<List<PenggunaModel>>> {
+//                return source.getPengguna(origin)
+//            }
+//        }.asFlow()
+//    }
 
 
 }
