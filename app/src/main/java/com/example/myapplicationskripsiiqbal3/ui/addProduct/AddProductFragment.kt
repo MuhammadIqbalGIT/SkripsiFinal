@@ -56,6 +56,8 @@ class AddProductFragment : BaseFragment<FragmentAddProductBinding>() {
             val call: Call<ProductData> = productService.addProduct(productRequest)
             call.enqueue(object : Callback<ProductData> {
                 override fun onResponse(call: Call<ProductData>, response: Response<ProductData>) {
+                    val rawResponse = response.raw().toString()
+                    println("Raw Response: $rawResponse")
                     if (response.isSuccessful) {
                         val productResponse: ProductData? = response.body()
                         productResponse?.let {

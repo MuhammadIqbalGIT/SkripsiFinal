@@ -38,6 +38,8 @@ class LoginActivity2 : AppCompatActivity() {
 
         RetrofitClient.instance.login(loginRequest).enqueue(object : Callback<LoginModel> {
             override fun onResponse(call: Call<LoginModel>, response: Response<LoginModel>) {
+                val rawResponse = response.raw().toString()
+                println("Raw Response: $rawResponse")
                 if (response.isSuccessful) {
                     val loginResponse = response.body()
                     // Handle the response as needed

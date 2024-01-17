@@ -53,10 +53,16 @@ class ProductDetailFragment : BaseFragment<FragmentProductDetailBinding>() {
         val productService = RetrofitClient.instance
         productService.getProductDetail(productId)
             .enqueue(object : Callback<ApiResponseNew<ProductApiResponse>> {
+
                 override fun onResponse(
+
                     call: Call<ApiResponseNew<ProductApiResponse>>,
-                    response: Response<ApiResponseNew<ProductApiResponse>>
+                    response: Response<ApiResponseNew<ProductApiResponse>>,
+
+
                 ) {
+                    val rawResponse = response.raw().toString()
+                    println("Raw Response: $rawResponse")
                     if (response.isSuccessful) {
                         val productApiResponse = response.body()?.data?.product
                         itemView = productApiResponse

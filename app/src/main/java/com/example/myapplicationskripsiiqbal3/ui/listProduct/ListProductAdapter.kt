@@ -16,6 +16,7 @@ class ListProductAdapter : ListAdapter<ProductModel, ListProductAdapter.ListProd
 
     lateinit var onButtonDetailClick: ((ProductModel) -> Unit)
     lateinit var onIconDeleteClick :((ProductModel)-> Unit)
+    lateinit var onButtonChangeClick : ((ProductModel)-> Unit)
 
     companion object {
         private val diffCallback = object : DiffUtil.ItemCallback<ProductModel>() {
@@ -61,6 +62,10 @@ class ListProductAdapter : ListAdapter<ProductModel, ListProductAdapter.ListProd
                 }
                 ivDeleteProduct.setOnClickListener {
                     onIconDeleteClick.invoke(item)
+                }
+
+                btnUbah.setOnClickListener {
+                    onButtonChangeClick.invoke(item)
                 }
             }
         }

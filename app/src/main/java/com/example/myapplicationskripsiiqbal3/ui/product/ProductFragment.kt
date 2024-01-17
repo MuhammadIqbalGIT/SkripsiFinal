@@ -53,7 +53,10 @@ class ProductFragment : BaseFragment<FragmentProductBinding>() {
                         override fun onResponse(
                             call: Call<ArrayList<ProductModel>>,
                             response: Response<ArrayList<ProductModel>>
+
                         ) {
+                            val rawResponse = response.raw().toString()
+                            println("Raw Response: $rawResponse")
                             val responseCode: String = response.code().toString()
                             // tvResponseCode.text = responseCode
                             response.body()?.let {

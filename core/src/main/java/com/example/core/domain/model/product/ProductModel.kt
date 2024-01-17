@@ -2,6 +2,7 @@ package com.example.core.domain.model.product
 
 import androidx.resourceinspection.annotation.Attribute.IntMap
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ProductModel(
 
@@ -13,4 +14,4 @@ data class ProductModel(
     @SerializedName("harga") val harga: Double,
     @SerializedName("BrandID") val brandId : Int,
     @SerializedName("NamaBrand") val namaBrand : String
-)
+) : Serializable

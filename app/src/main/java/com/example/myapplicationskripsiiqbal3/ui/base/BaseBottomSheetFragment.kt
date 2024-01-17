@@ -39,6 +39,10 @@ abstract class BaseBottomSheetFragment<VB : ViewBinding> : BottomSheetDialogFrag
         super.onViewCreated(view, savedInstanceState)
         loadingDialog = LoadingDialog.default(requireContext())
     }
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        setStyle(STYLE_NO_FRAME, R.style.BottomSheetDialog)
+        return super.onCreateDialog(savedInstanceState)
+    }
 
     open fun VB.initUI() {
 
