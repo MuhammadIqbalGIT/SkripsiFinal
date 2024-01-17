@@ -28,6 +28,15 @@
         android:name="com.example.myapplicationskripsiiqbal3.ui.account.AccountFragment"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/listProductFragment"
+        android:name="com.example.myapplicationskripsiiqbal3.ui.listProduct.ListProductFragment"
+        android:label="fragment_list_product"
+        tools:layout="@layout/fragment_list_product" >
+        <action
+            android:id="@+id/action_listProductFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
 
 
 </navigation>

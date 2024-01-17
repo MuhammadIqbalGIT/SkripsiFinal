@@ -4,4 +4,140 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#B71A35</color>
     <color name="transparent">#00FFFFFF</color>
+
+    <color name="colorPrimary">@color/colorWhite</color> <!--action bar, button, icon nav, dll -->
+    <color name="colorPrimaryDark">@color/colorWhite</color> <!--Status bar -->
+    <color name="colorAccent">@color/colorPrimaryOrange</color>
+
+    <!--Backup 2021-05-21-->
+    <!--    <color name="colorPrimary">#0B1F8F</color> &lt;!&ndash;action bar, button, icon nav, dll &ndash;&gt;-->
+    <!--    <color name="colorPrimaryDark">#0B1F8F</color> &lt;!&ndash;Status bar &ndash;&gt;-->
+    <!--    <color name="colorAccent">@color/colorPrimaryOrange</color>-->
+
+    <color name="colorPrimaryOrange">#FF4E00</color>
+    <color name="colorPrimaryPurple">#8332A7</color>
+    <color name="colorPrimaryGray">#9B9B9B</color>
+    <color name="colorPrimaryBlue">#0B1F8F</color>
+    <color name="colorPrimaryGreen">#218838</color>
+
+    <!--    ActionBarStart-->
+    <color name="mainActionBarSearchBackground">#E1E1E1</color>
+    <color name="mainActionBarSearchTxt">#636363</color>
+    <color name="mainActionBarIcon">#636363</color>
+    <!--    ActionBarEnd-->
+
+    <color name="background">#f2f2f2</color>
+    <color name="edittext_default_color_text">@color/colorPrimaryGray</color>
+
+    <!--Item Color-->
+    <color name="itemName">#000000</color>
+    <color name="itemPrice">#ff8000</color>
+    <color name="itemMerchant">#737373</color>
+    <color name="divider">#b3b3b3</color>
+    <color name="background_disable">#f9f9f9</color>
+
+    <!--Product Item    -->
+    <color name="ProductPriceBeforeDiscount">#FF0000</color>
+
+    <color name="divider_color">#1F000000</color>
+    <color name="demo_dark_transparent">#24000000</color>
+    <color name="quantum_grey_600">#757575</color>
+    <color name="shimmer_background">#e0e0e0</color>
+
+    <color name="colorBlack">#101426</color>
+    <color name="colorBlue">#FF1C26C7</color>
+    <color name="colorLightBlue">#FFBDE2F8</color>
+    <color name="colorLightGreen">#FF31FB04</color>
+    <color name="colorGreen">#00ff00</color>
+    <color name="colorGrey">#FFB6B6B6</color>
+    <color name="colorTransparentGrey">#7CB6B6B6</color>
+    <color name="colorTransparentBlue">#4DCBD5F9</color>
+    <color name="colorDarkGrey">#6E6E6E</color>
+    <color name="colorGreyDisable">#E9EDF4</color>
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorRed">#ff0000</color>
+    <color name="colorPink">#ff007f</color>
+
+    <color name="chat_my_message">#ffeac1</color>
+    <color name="chat_other_message">#cecece</color>
+
+    <color name="alert_button_positive_color">@color/colorPrimaryBlue</color>
+    <color name="alert_button_negative_color">@color/colorPrimaryBlue</color>
+
+    <color name="payment_content_background">#FAFAFA</color>
+    <color name="payment_content_outline">#F4F4F4</color>
+    <color name="payment_content_inline">#E9E7E7</color>
+
+    <color name="polygon_stroke">#CC4860fb</color>
+    <color name="polygon_fill">#55e0e4fd</color>
+
+    <color name="product_promo_badge_color_start">@color/colorBlue</color>
+    <color name="product_promo_badge_color_center">@color/colorPrimaryOrange</color>
+    <color name="product_promo_badge_color_end">#ffeb3b</color>
+
+    <color name="password_strength_default">#E5E5E5</color>
+    <color name="password_strength_1">#FF4E00</color>
+    <color name="password_strength_2">#FF9900</color>
+    <color name="password_strength_3">#A9BF23</color>
+    <color name="password_strength_4">#38BF23</color>
+
+    <!--    Update UI v1 Start  -->
+    <color name="stroke_default">#B5C2DA</color>
+
+
+    <!--    Update UI v1 End  -->
+
+    <!--Update UI V2-->
+    <color name="light_blue">#206FE6</color>
+    <color name="blue">#394FBB</color>
+    <color name="black_blue">#222B45</color>
+    <color name="light_grey">#D9D9D9</color>
+    <color name="orange">#FF863F</color>
+    <color name="dark_orange">#FF4E00</color>
+    <color name="pink">#FFD6D6</color>
+    <color name="grey_date">#E9EDF4</color>
+
+
+    <!--Strength-->
+    <color name="password_strength_default_v2">#D9D9D9</color>
+    <color name="password_strength_v2_1">#FC1F17</color>
+    <color name="password_strength_v2_2">#EAB107</color>
+    <color name="password_strength_v2_3">#7ECC18</color>
+    <color name="password_strength_v2_4">#57DA50</color>
+
+    <color name="warna_bg_tooltip">#222B45</color>
+
+    <!--Detail Product-->
+    <color name="card_select">#FFDCCC</color>
+
+    <!--Background Snackbar-->
+    <color name="background_snackbar_red">#F75656</color>
+
+    <!--Status Billing-->
+    <color name="open">#8332A7</color>
+    <color name="paid">#1C9816</color>
+    <color name="failed">#FC1717</color>
+    <color name="waitconfirm">#F2994A</color>
+    <color name="waiting_for_payment">#B71A35</color>
+    <!--Status Billing (Background)-->
+    <color name="background_open">#F8CDFC</color>
+    <color name="background_paid">#CAFCB1</color>
+    <color name="background_failed">#FFD6D6</color>
+
+    <!--color voucher-->
+    <color name="redVoucher">#FF3535</color>
+    <color name="blackVoucher">#231F20</color>
+
+    <color name="selectedTab">#DEE5FF</color>
+
+    <!--Error text input Layout & pesan error text input layout-->
+    <color name="errorTextInputLayoyut">#FF3C35</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+
+    <color name="shimmer_background_new">#DDDDDD</color>
+    <color name="shimmer_background_">#D6D6D6</color>
 </resources>

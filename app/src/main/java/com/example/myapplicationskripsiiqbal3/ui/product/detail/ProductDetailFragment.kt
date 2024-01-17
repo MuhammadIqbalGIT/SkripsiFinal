@@ -1,20 +1,20 @@
 package com.example.myapplicationskripsiiqbal3.ui.product.detail
 
+
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
-import com.example.core.data.remote.network.ApiService
+import com.bumptech.glide.Glide
 import com.example.core.data.remote.response.ApiResponseNew
-import com.example.core.data.remote.response.ProductApiResponse
 import com.example.core.di.RetrofitClient
-import com.example.core.domain.model.product.ProductModel
+import com.example.core.domain.model.ProductApiResponse
+import com.example.myapplicationskripsiiqbal3.R
 import com.example.myapplicationskripsiiqbal3.databinding.FragmentProductDetailBinding
 import com.example.myapplicationskripsiiqbal3.ui.base.BaseFragment
-
-
+import com.example.myapplicationskripsiiqbal3.utils.FormatCurrency
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -59,12 +59,24 @@ class ProductDetailFragment : BaseFragment<FragmentProductDetailBinding>() {
                 ) {
                     if (response.isSuccessful) {
                         val productApiResponse = response.body()?.data?.product
-
+                        itemView = productApiResponse
                         tvNamaProduk.text = productApiResponse?.nama
-                        tvStock.text = productApiResponse?.stok.toString()
-                        tvHargaDiskon.text = productApiResponse?.harga.toString()
+                        tvStock.text = productApiResponse?.stok.toString() +" "+ productApiResponse?.satuan
+                        tvHargaDiskon.text = productApiResponse?.harga?.let {
+                            FormatCurrency.formatRp(
+                                it
+                            )
+                        }
                         tvBrandName.text = productApiResponse?.namaBrand
 
+
+
+                        Glide.with(requireContext())
+                            .load(productApiResponse?.image)
+                            .centerCrop()
+                            .into(imageView11)
+
+                        Log.d("dsagdfadas",productApiResponse?.image.toString())
 
                     } else {
                         // Handle the error

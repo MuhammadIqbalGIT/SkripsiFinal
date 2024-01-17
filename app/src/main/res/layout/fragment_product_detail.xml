@@ -3,7 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
+        <import type="android.view.View" />
+
+        <variable
+            name="itemView"
+            type="com.example.core.domain.model.DetailProduct" />
+    </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,6 +33,7 @@
                 android:id="@+id/appbar_detail_produk"
                 layout="@layout/fragment_detail_product_appbar"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:urlGambar="@{itemView.image}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

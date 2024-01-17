@@ -4,6 +4,9 @@
         android:id="@+id/productFragment"
         android:icon="@drawable/ic_home"
         android:title="Produk" />
+    <item
+        android:id="@+id/listProductFragment"
+        android:title="List Produk" />
 
     <item
         android:id="@+id/accountFragment"

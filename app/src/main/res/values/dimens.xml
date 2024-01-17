@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Layout dimens    -->
+    <dimen name="container_padding">16dp</dimen>
+    <dimen name="container_padding_start">16dp</dimen>
+    <dimen name="container_padding_end">16dp</dimen>
+    <dimen name="conter_padding_size_32">32dp</dimen>
+    <dimen name="conter_padding_size_8">8dp</dimen>
+
+    <dimen name="container_margin">16dp</dimen>
+    <dimen name="container_margin_start">16dp</dimen>
+    <dimen name="container_margin_end">16dp</dimen>
+    <!-- Layout dimens    -->
+
+    <dimen name="product_name_size">10pt</dimen>
+    <dimen name="product_price_size">10pt</dimen>
+
+    <dimen name="text_header_lg">24sp</dimen>
+    <dimen name="text_header_md">18sp</dimen>
+    <dimen name="text_header_sm">16sp</dimen>
+
+    <dimen name="text_lg">20sp</dimen>
+    <dimen name="text_md">14sp</dimen>
+    <dimen name="text_sm">12sp</dimen>
+    <dimen name="text_xsm">10sp</dimen>
+    <dimen name="text_xs">7sp</dimen>
+
+    <dimen name="text_cart">8sp</dimen>
+
+    <dimen name="dot_indicator_width">16dp</dimen>
+    <dimen name="dot_indicator_height">16dp</dimen>
+    <dimen name="dot_indicator_8">8dp</dimen>
+    <dimen name="dot_indicator_12">12dp</dimen>
+    <dimen name="dot_indicator_4">4dp</dimen>
+    <dimen name="dadsd">234dp</dimen>
+
+    <dimen name="shimmer_text_height">24dp</dimen>
+    <dimen name="shimmer_text_height_small">18dp</dimen>
+    <!-- tab corner radius    -->
+    <dimen name="tab_corner_radius">8dp</dimen>
+
+    <dimen name="tab_margin_start">0dp</dimen>
+    <dimen name="tab_margin_end">8dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="brand_gallery_width">234dp</dimen>
+</resources>

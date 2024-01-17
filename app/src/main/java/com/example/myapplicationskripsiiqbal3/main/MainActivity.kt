@@ -56,7 +56,8 @@ class MainActivity : AppCompatActivity() {
 
             navController.addOnDestinationChangedListener { controller, destination, arguments ->
                 if (destination.id == R.id.productFragment ||
-                    destination.id == R.id.accountFragment
+                    destination.id == R.id.accountFragment ||
+                    destination.id == R.id.listProductFragment
                 ) {
                     binding.coordinatorLayout.visibility = View.VISIBLE
                 } else {

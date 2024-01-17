@@ -8,16 +8,496 @@
     <style name="Theme.MyApplicationSkripsiIqbal3" parent="Base.Theme.MyApplicationSkripsiIqbal3" />
 
 
+
+
+    <style name="RoundedShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <!--TextView Black-->
+    <style name="smallTextNormalBlack">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="smallTextNormalBlack1">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="mediumTextNormalBlack">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="largeTextNormalBlack">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="smallTextBoldBlack">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="mediumTextBoldBlack">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="largeTextBoldBlack">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <!--TextView White-->
+    <style name="smallTextNormalWhite">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="mediumTextNormalWhite">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="largeTextNormalWhite">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="smallTextBoldWhite">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="mediumTextBoldWhite">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="largeTextBoldWhite">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+
+    <!--TextView Orange-->
+    <style name="smallTextNormalOrange">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorPrimaryOrange</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="mediumTextNormalOrange">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textColor">@color/colorPrimaryOrange</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="largeTextNormalOrange">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textColor">@color/colorPrimaryOrange</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="smallTextBoldOrange">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorPrimaryOrange</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="mediumTextBoldOrange">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textColor">@color/colorPrimaryOrange</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="largeTextBoldOrange">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textColor">@color/colorPrimaryOrange</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="smallAllCapsTextNormalOrange">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorPrimaryOrange</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <!--TextView Gray-->
+    <style name="smallTextNormalGray">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorPrimaryGray</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="mediumTextNormalGray">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textColor">@color/colorPrimaryGray</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="largeTextNormalGray">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textColor">@color/colorPrimaryGray</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="smallTextBoldGray">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorPrimaryGray</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="mediumTextBoldGray">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textColor">@color/colorPrimaryGray</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="largeTextBoldGray">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textColor">@color/colorPrimaryGray</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+
+    <!--TextView Blue-->
+    <style name="smallTextNormalBlue">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorPrimaryBlue</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="mediumTextNormalBlue">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textColor">@color/colorPrimaryBlue</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="largeTextNormalBlue">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textColor">@color/colorPrimaryBlue</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="smallTextBoldBlue">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorPrimaryBlue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="mediumTextBoldBlue">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textColor">@color/colorPrimaryBlue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="largeTextBoldBlue">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textColor">@color/colorPrimaryBlue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <!-- Text View Red -->
+    <style name="smallAllCapsTextBoldRed">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:textColor">@color/colorRed</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="mediumTextNormalBlackBlue">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textColor">@color/black_blue</item>
+        <item name="android:fontFamily">@font/public_sans</item>
+    </style>
+
+    <style name="buttonFilled" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/color_text_button_filled</item>
+        <item name="android:backgroundTint">@color/btn_primary_orange_bg_selector</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">6dp</item>
+
+    </style>
+
+    <style name="buttonTextOnly" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">#222B45</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">6dp</item>
+
+    </style>
+
+    <style name="buttonOutlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/color_text_button_outlined</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="strokeColor">@color/btn_primary_orange_bg_selector</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">6dp</item>
+    </style>
+
+
+    <style name="buttonFilledItem" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/color_text_button_filled</item>
+        <item name="android:backgroundTint">@color/btn_primary_orange_bg_selector</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">10dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">6dp</item>
+
+    </style>
+
+    <style name="buttonOutlinedItem" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/color_text_button_outlined</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="strokeColor">@color/btn_primary_orange_bg_selector</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">10dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">6dp</item>
+
+    </style>
+
+
+    <style name="styleSpinner" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="textInputLayoutNoStroke" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">#fff</item>
+        <item name="boxStrokeWidth">0dp</item>
+    </style>
+
+
+    <!--    Update UI v1 Start  -->
     <style name="CustomAlertDialog">
         <item name="android:background">@drawable/bg_alert_dialog</item>
         <item name="android:padding">16dp</item>
         <item name="android:layout_margin">16dp</item>
     </style>
 
-
-    <style name="RoundedShapeAppearance">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item> <!-- 50% akan membuatnya bulat -->
+    <style name="CustomButtonPrimary" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/btn_primary_bg_selector</item>
+        <item name="android:textColor">@color/color_text_button_filled</item>
+        <item name="android:enabled">true</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
     </style>
+
+    <style name="CustomButtonSmallPrimary" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/btn_primary_bg_selector</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:enabled">true</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingTop">9.5dp</item>
+        <item name="android:paddingBottom">9.5dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <style name="CustomButtonPrimaryOutlined" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">#fff</item>
+        <item name="android:textColor">#0B1F8F</item>
+        <item name="android:enabled">true</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">#0B1F8F</item>
+    </style>
+
+    <style name="CustomButtonSmallPrimaryOutlined" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">#fff</item>
+        <item name="android:textColor">#0B1F8F</item>
+        <item name="android:enabled">true</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingTop">9.5dp</item>
+        <item name="android:paddingBottom">9.5dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">#0B1F8F</item>
+    </style>
+
+    <style name="CustomButtonPrimaryTextOnly" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">#fff</item>
+        <item name="android:textColor">#0B1F8F</item>
+        <item name="android:enabled">true</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <style name="CustomButtonFilterOutlined" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">#fff</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:enabled">true</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">#B5C2DA</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+        <!--        <item name="fontFamily">@font/roboto_family</item>-->
+        <!--        <item name="android:fontFamily">@font/roboto_family</item>-->
+    </style>
+
+    <style name="CustomBottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_bg</item>
+    </style>
+
+    <style name="MySpinnerDatePickerStyle" parent="android:Theme.Material.Dialog">
+        <item name="android:datePickerStyle">@style/MySpinnerDatePicker</item>
+    </style>
+
+    <style name="MySpinnerDatePicker" parent="android:Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+
+    <style name="MySpinnerDatePickerBottomSheet" parent="android:Widget.Material.DatePicker">
+        <item name="android:paddingLeft">0dp</item> <!-- remove left padding -->
+        <item name="android:paddingRight">0dp</item> <!-- remove right padding -->
+    </style>
+
+    <style name="circleShapeImage">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="circleSquareShapeImage">
+        <item name="cornerSize">8%</item>
+    </style>
+
+    <style name="circleSquareShapeImage2">
+        <item name="cornerSize">6%</item>
+    </style>
+
+    <style name="circleSquareTopShapeImage">
+        <item name="cornerSizeTopLeft">8dp</item>
+        <item name="cornerSizeTopRight">8dp</item>
+    </style>
+
+    <style name="circleSquareShapeImageElevation">
+        <item name="cornerSize">8%</item>
+        <item name="elevation">4dp</item>
+    </style>
+
+    <style name="textNoAllCapsTab" parent="@android:style/Widget.Holo.ActionBar.TabText">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">Roboto</item>
+    </style>
+
+
+
+    <!--    Update UI v1 End  -->
+
+    <!--Tab    -->
+    <style name="CustomTabLayoutAllCaps" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">true</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/text_md</item>
+    </style>
+
+    <style name="CustomTabLayout" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/text_md</item>
+    </style>
+
+    <style name="CustomTabLayoutSnk" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
 
 </resources>

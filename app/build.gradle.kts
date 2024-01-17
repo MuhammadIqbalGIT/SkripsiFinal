@@ -87,10 +87,23 @@ dependencies {
 
 
 
-    //*Retrofit*
+    //*Retrofit*\\
     implementation("com.google.code.gson:gson:2.9.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
     implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
+
+
+    //*Glide*\\
+    implementation ("com.github.bumptech.glide:glide:4.15.0")
+    kapt ("com.github.bumptech.glide:compiler:4.15.0")
+
+
+    //*Coil*\\
+    implementation("io.coil-kt:coil:2.2.2")
+    implementation("io.coil-kt:coil-svg:2.4.0")
+
+    //*Timber*\\
+    implementation ("com.jakewharton.timber:timber:5.0.1")
 }

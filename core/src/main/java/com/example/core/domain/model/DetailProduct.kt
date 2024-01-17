@@ -1,6 +1,15 @@
 package com.example.core.domain.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
+
+
+data class ProductApiResponse(
+    @SerializedName("product")
+    val product: DetailProduct
+) : Serializable
+
+
 
 data class DetailProduct(
 
@@ -12,4 +21,4 @@ data class DetailProduct(
     @SerializedName("harga") val harga: Double,
     @SerializedName("BrandID") val brandId : Int,
     @SerializedName("NamaBrand") val namaBrand : String
-)
+): Serializable

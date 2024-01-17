@@ -1,20 +1,21 @@
-package com.example.myapplicationskripsiiqbal3.ui.product
+package com.example.myapplicationskripsiiqbal3.ui.listProduct
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.core.domain.model.product.ProductModel
+import com.example.myapplicationskripsiiqbal3.databinding.FragmentListProductItemBinding
 import com.example.myapplicationskripsiiqbal3.databinding.FragmentProductItemBinding
 import com.example.myapplicationskripsiiqbal3.utils.FormatCurrency
 
-class ProductAdapter : ListAdapter<ProductModel, ProductAdapter.ProductViewHolder>(diffCallback) {
+class ListProductAdapter : ListAdapter<ProductModel, ListProductAdapter.ListProductViewHolder>(diffCallback) {
 
-    lateinit var onCardListener: ((ProductModel) -> Unit)
+    lateinit var onButtonDetailClick: ((ProductModel) -> Unit)
+    lateinit var onIconDeleteClick :((ProductModel)-> Unit)
 
     companion object {
         private val diffCallback = object : DiffUtil.ItemCallback<ProductModel>() {
@@ -28,37 +29,38 @@ class ProductAdapter : ListAdapter<ProductModel, ProductAdapter.ProductViewHolde
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        val binding = FragmentProductItemBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListProductViewHolder {
+        val binding = FragmentListProductItemBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return ProductViewHolder(binding)
+        return ListProductViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ListProductViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item)
     }
 
-    inner class ProductViewHolder(private val binding: FragmentProductItemBinding) :
+    inner class ListProductViewHolder(private val binding: FragmentListProductItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(item: ProductModel) {
 
             with(binding) {
                 tvItemHargaProduk.text = FormatCurrency.formatRp(item.harga)
-                tvItemNamaProduk.text = item.nama
-                tvItemStock.text = item.stok.toInt().toString() +" "+ item.satuan
+                tvItemNameProduk.text = item.nama
+                tvStock.text = item.stok.toInt().toString() +" "+ item.satuan
 
                 itemView = item
 
 
-
-
-                llProduk.setOnClickListener {
-                    onCardListener.invoke(item)
+                btnToDetailProduct.setOnClickListener {
+                    onButtonDetailClick.invoke(item)
+                }
+                ivDeleteProduct.setOnClickListener {
+                    onIconDeleteClick.invoke(item)
                 }
             }
         }

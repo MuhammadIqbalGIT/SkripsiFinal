@@ -1,9 +1,11 @@
 package com.example.core.data.remote.network
 
+import com.example.core.data.remote.request.AddNewProductRequest
 import com.example.core.data.remote.request.LoginRequest
 import com.example.core.data.remote.response.ApiResponseNew
-import com.example.core.data.remote.response.ProductApiResponse
 import com.example.core.domain.model.PenggunaModel
+import com.example.core.domain.model.ProductApiResponse
+import com.example.core.domain.model.addNewProduct.ProductData
 import com.example.core.domain.model.login.LoginModel
 import com.example.core.domain.model.product.ProductModel
 import retrofit2.Call
@@ -41,4 +43,11 @@ interface ApiService {
     @GET("product/detail")
     fun getProductDetail(@Query("id") productId: Int): Call<ApiResponseNew<ProductApiResponse>>
 
+    /**
+     * Add New Product
+     **/
+    @POST("product")
+    fun addProduct(@Body productRequest: AddNewProductRequest): Call<ProductData>
 }
+
+
