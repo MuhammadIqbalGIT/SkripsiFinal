@@ -1,10 +1,13 @@
 package com.example.myapplicationskripsiiqbal3.ui.listProduct
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -26,6 +29,8 @@ class ListProductFragment : BaseFragment<FragmentListProductBinding>() {
         get() = FragmentListProductBinding::inflate
 
     private lateinit var adapterProduct: ListProductAdapter
+    private var isSearchOpen = false
+    private var isFromSearch = false
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,18 +43,50 @@ class ListProductFragment : BaseFragment<FragmentListProductBinding>() {
     }
 
     override fun FragmentListProductBinding.initUI() {
+        binding.appbar.tvScreen.text = "List Produk"
         adapterProduct = ListProductAdapter()
         rvProduct.adapter = adapterProduct
         rvProduct.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
+        if (isSearchOpen) {
+            appbar.ivSearch.isVisible = false
+            appbar.tvScreen.isVisible = false
+            appbar.tilSearch.isVisible = true
+        }
     }
 
     override fun FragmentListProductBinding.initEvent() {
+
+        with(appbar) {
+            ivSearch.setOnClickListener {
+                ivSearch.isVisible = false
+                tvScreen.isVisible = false
+                tilSearch.isVisible = true
+                etSearch.requestFocus()
+            }
+            etSearch.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable?) {
+                    val query = s.toString().trim()
+                }
+            })
+        }
+
         adapterProduct.onButtonDetailClick = {
             val action =
                 ListProductFragmentDirections.actionListProductFragmentToProductDetailFragment(it.id)
             findNavController().navigate(action)
         }
+
+        appbar.ivBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+
+
         adapterProduct.onIconDeleteClick = {
             deleteProduct(it.id)
         }
@@ -74,23 +111,20 @@ class ListProductFragment : BaseFragment<FragmentListProductBinding>() {
                             call: Call<ArrayList<ProductModel>>,
                             response: Response<ArrayList<ProductModel>>
                         ) {
-//                            val responseCode: String = response.code().toString()
-//                            tvResponseCode.text = responseCode
                             response.body()?.let {
                                 adapterProduct.submitList(it)
                                 val textCount = "Total Produk Anda"
                                 val count = adapterProduct.itemCount
-                                tvCount.text = "$textCount $count"
+                                binding.tvCount.text = "$textCount $count"
                             }
                         }
 
                         override fun onFailure(call: Call<ArrayList<ProductModel>>, t: Throwable) {
+                            // Handle failure
                         }
-
                     })
             }
         }
-
     }
 
     fun deleteProduct(productId: Int) {

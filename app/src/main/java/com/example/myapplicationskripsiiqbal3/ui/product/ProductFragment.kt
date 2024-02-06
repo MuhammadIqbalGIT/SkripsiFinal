@@ -57,7 +57,7 @@ class ProductFragment : BaseFragment<FragmentProductBinding>() {
                         ) {
                             val rawResponse = response.raw().toString()
                             println("Raw Response: $rawResponse")
-                            val responseCode: String = response.code().toString()
+                         //   val responseCode: String = response.code().toString()
                             // tvResponseCode.text = responseCode
                             response.body()?.let {
                                 adapterProduct.submitList(it)

@@ -7,6 +7,7 @@ import com.example.core.data.remote.response.ApiResponseNew
 import com.example.core.domain.model.PenggunaModel
 import com.example.core.domain.model.ProductApiResponse
 import com.example.core.domain.model.addNewProduct.ProductData
+import com.example.core.domain.model.brand.BrandModel
 import com.example.core.domain.model.deleteProduct.ApiResponse
 import com.example.core.domain.model.login.LoginModel
 import com.example.core.domain.model.product.ProductModel
@@ -58,7 +59,7 @@ interface ApiService {
     /**
      * Delete Product
      **/
-    @DELETE("product/{id}")
+    @DELETE("product")
     fun deleteProduct(@Query("id") productId: Int): Call<ApiResponse>
 
 
@@ -67,6 +68,13 @@ interface ApiService {
      **/
     @PUT("product")
     fun updateProduct(@Body productRequest: UpdateProductRequest): Call<ProductData>
+
+    /**
+     * Get Brand
+     **/
+    @GET("brand")
+    fun getBrand(@Query("NamaBrand") namaBrand: String): Call<com.example.core.domain.model.brand.ApiResponse>
+
 }
 
 
