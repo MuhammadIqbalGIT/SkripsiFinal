@@ -72,19 +72,15 @@ dependencies {
     implementation("com.google.android.datatransport:transport-runtime:3.2.0")
 
 
-
-
 //    //*Lottie*\\
 //    implementation ("com.airbnb.android:lottie:6.0.0")
 
 
-
     //NEW HILT
-    implementation ("com.google.dagger:hilt-android:2.46")
-    kapt ("com.google.dagger:hilt-android-compiler:2.46")
-    kapt ("androidx.hilt:hilt-compiler:1.0.0")
-    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
-
+    implementation("com.google.dagger:hilt-android:2.46")
+    kapt("com.google.dagger:hilt-android-compiler:2.46")
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
 
     //*Retrofit*\\
@@ -96,8 +92,8 @@ dependencies {
 
 
     //*Glide*\\
-    implementation ("com.github.bumptech.glide:glide:4.15.0")
-    kapt ("com.github.bumptech.glide:compiler:4.15.0")
+    implementation("com.github.bumptech.glide:glide:4.15.0")
+    kapt("com.github.bumptech.glide:compiler:4.15.0")
 
 
     //*Coil*\\
@@ -105,5 +101,5 @@ dependencies {
     implementation("io.coil-kt:coil-svg:2.4.0")
 
     //*Timber*\\
-    implementation ("com.jakewharton.timber:timber:5.0.1")
+    implementation("com.jakewharton.timber:timber:5.0.1")
 }

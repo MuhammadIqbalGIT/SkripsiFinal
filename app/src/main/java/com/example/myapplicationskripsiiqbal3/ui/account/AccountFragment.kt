@@ -71,7 +71,14 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>() {
             menuIcon = R.drawable.ic_add,
             isVisible = true
         )
-        val data = listOf(local1, local2, local3)
+        val local5 = MenuModel(
+            menuId = MENU_PENJUALAN,
+            menuNama = "Input Penjualan",
+            menuDesc = "Mari Menjual produk anda",
+            menuIcon = R.drawable.ic_add,
+            isVisible = true
+        )
+        val data = listOf(local1, local2, local3 , local5)
         adapterMenu.submitList(data)
     }
 
@@ -108,6 +115,10 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>() {
                         AccountFragmentDirections.actionAccountFragmentToBrandFragment()
                     findNavController().navigate(action)
                 }
+                MENU_PENJUALAN ->{
+
+                }
+
             }
         }
         adapterHelp.onCardListener = {
@@ -130,6 +141,7 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>() {
         const val MENU_LIST_PRODUCT = "local2"
         const val MENU_LIST_BRAND = "local3"
         const val MENU_HELP = "local4"
+        const val MENU_PENJUALAN = "local5"
     }
 }
 

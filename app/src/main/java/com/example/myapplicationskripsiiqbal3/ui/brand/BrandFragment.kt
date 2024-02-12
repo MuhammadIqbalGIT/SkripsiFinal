@@ -6,12 +6,16 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core.di.RetrofitClient
 import com.example.core.domain.model.brand.ApiResponse
 import com.example.myapplicationskripsiiqbal3.databinding.FragmentBrandBinding
 import com.example.myapplicationskripsiiqbal3.ui.base.BaseFragment
+import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -76,10 +80,18 @@ class BrandFragment : BaseFragment<FragmentBrandBinding>() {
             appbar.ivBack.setOnClickListener {
                 requireActivity().onBackPressedDispatcher.onBackPressed()
             }
+
+
+
+
+
+
+
         }
     }
 
     override fun FragmentBrandBinding.initObserve() {
+
 
     }
 
@@ -96,23 +108,36 @@ class BrandFragment : BaseFragment<FragmentBrandBinding>() {
                     if (apiResponse?.success == true) {
                         val brandList = apiResponse.data?.brands
                         brandList?.let {
-                            // Update your adapter or perform necessary operations
-                            adapter.submitList(it)
+                            if (it.isEmpty()) {
+                                showSnackbar("Tidak ada data")
+                                binding.llNoData.isVisible = true
+                                adapter.submitList(null) // Clear the RecyclerView
+                            } else {
+                                binding.llNoData.isVisible = false
+                                adapter.submitList(it)
+                            }
                         }
                     } else {
                         // Handle unsuccessful response
                         val errorMessage = apiResponse?.message ?: "Unknown error"
-                        // Handle the error message
+                        showSnackbar(errorMessage)
                     }
                 } else {
                     // Handle unsuccessful HTTP response
+                    showSnackbar("Gagal mengambil data dari server")
                 }
             }
 
             override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
                 // Handle network failure
+                showSnackbar("Terdapat masalah jaringan")
             }
         })
-
     }
+
+    private fun showSnackbar(message: String) {
+        Snackbar.make(requireView(), message, Snackbar.LENGTH_SHORT).show()
+    }
+
+
 }

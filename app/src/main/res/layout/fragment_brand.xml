@@ -29,6 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <include
             android:id="@+id/appbar"
             layout="@layout/fragment_list_product_search_appbar"
@@ -59,6 +60,53 @@
                 tools:text="Total Brand Anda 4" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llNoData"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/nestedScrollView11"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+
+            <ImageView
+                android:id="@+id/ivNoData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_no_data"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                tools:visibility="visible">
+
+
+            </ImageView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/public_sans"
+                android:gravity="center"
+                android:text="Belum ada data atau perbaiki kata kunci pencarian"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/ivNoData"
+                app:layout_constraintStart_toStartOf="@+id/ivNoData"
+                app:layout_constraintTop_toBottomOf="@+id/ivNoData" />
+
+
+        </LinearLayout>
+
+
+
 
 
         <androidx.core.widget.NestedScrollView
