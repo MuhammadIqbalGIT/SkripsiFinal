@@ -67,7 +67,7 @@ class ListProductEditProductBottomSheetFragment :
 
     private fun FragmentListProductEditProductBottomSheetBinding.setEditTextDefaultFromData(){
         etNamaProduk.setText(productModel.nama)
-        etHarga.setText( FormatCurrency.formatRp(productModel.harga))
+        etHarga.setText( FormatCurrency.formatRp(productModel.harga?:0.0))
         etSatuan.setText(productModel.satuan)
         etStock.setText(productModel.stok.toString())
         tvNameProductData.text = productModel.nama
@@ -80,7 +80,7 @@ class ListProductEditProductBottomSheetFragment :
         val etStock = etStock.text.toString()
         val etPrice = etHarga.text.toString()
         if (etNameProduct.isNotEmpty() && etUnit.isNotEmpty() && etStock.isNotEmpty() && etPrice.isNotEmpty()) {
-            val productRequest = UpdateProductRequest(productModel.id,etNameProduct, etUnit, etStock, etPrice)
+            val productRequest = UpdateProductRequest(productModel.id?:0,etNameProduct, etUnit, etStock, etPrice)
             val productService = RetrofitClient.instance
             val call: Call<ProductData> = productService.updateProduct(productRequest)
 

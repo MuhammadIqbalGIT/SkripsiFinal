@@ -50,9 +50,9 @@ class ListProductAdapter : ListAdapter<ProductModel, ListProductAdapter.ListProd
         fun bind(item: ProductModel) {
 
             with(binding) {
-                tvItemHargaProduk.text = FormatCurrency.formatRp(item.harga)
+                tvItemHargaProduk.text = FormatCurrency.formatRp(item.harga?:0.0)
                 tvItemNameProduk.text = item.nama
-                tvStock.text = item.stok.toInt().toString() +" "+ item.satuan
+                tvStock.text = item.stok?.toInt().toString() +" "+ item.satuan
 
                 itemView = item
 

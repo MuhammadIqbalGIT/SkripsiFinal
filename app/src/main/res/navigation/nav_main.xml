@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_accountFragment_to_brandFragment"
             app:destination="@id/brandFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_saleFragment"
+            app:destination="@id/saleFragment" />
     </fragment>
     <fragment
         android:id="@+id/listProductFragment"
@@ -56,6 +59,24 @@
         android:id="@+id/brandFragment"
         android:name="com.example.myapplicationskripsiiqbal3.ui.brand.BrandFragment"
         android:label="BrandFragment" />
+    <fragment
+        android:id="@+id/saleFragment"
+        android:name="com.example.myapplicationskripsiiqbal3.ui.sale.SaleFragment"
+        android:label="fragment_sale"
+        tools:layout="@layout/fragment_sale" >
+        <action
+            android:id="@+id/action_saleFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkOutFragment"
+        android:name="com.example.myapplicationskripsiiqbal3.ui.sale.checkout.CheckOutFragment"
+        android:label="fragment_check_out"
+        tools:layout="@layout/fragment_check_out" >
+        <argument
+            android:name="product"
+            app:argType="com.example.core.domain.model.product.Data" />
+    </fragment>
 
 
 </navigation>

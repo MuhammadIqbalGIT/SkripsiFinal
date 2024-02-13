@@ -46,7 +46,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="Produk Tidak Tersedia"
                     android:textColor="#000000"
                     android:textStyle="bold"
                     tools:text="Produk tidak tersedia" />
@@ -79,22 +78,29 @@
                 app:layout_constraintTop_toBottomOf="@+id/cvProdukTidakTersedia">
 
 
+                <CheckBox
+                    android:id="@+id/cbProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
                 <ImageView
                     android:id="@+id/ivImageProduct"
                     imageProductUrl="@{itemView.image}"
                     android:layout_width="52dp"
                     android:layout_height="52dp"
-                    app:layout_constraintBottom_toBottomOf="@id/constraintLayout13"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/constraintLayout13" />
+                    app:layout_constraintBottom_toBottomOf="@+id/cbProduct"
+                    app:layout_constraintStart_toEndOf="@+id/cbProduct"
+                    app:layout_constraintTop_toTopOf="@+id/cbProduct" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout13"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/ivImageProduct"
-                    app:layout_constraintBottom_toTopOf="@id/clButton"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/ivImageProduct"
                     app:layout_constraintTop_toTopOf="parent">
@@ -172,51 +178,7 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <LinearLayout
-                    android:id="@+id/clButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:weightSum="2"
-                    android:layout_marginHorizontal="5dp"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="5dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout13">
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnUbah"
-                        style="@style/CustomButtonPrimaryOutlined"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Ubah Produk"
-                        app:icon="@drawable/ic_edit"
-                        app:iconGravity="textStart"
-                        app:iconTint="@null"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnToDetailProduct"
-                        style="@style/CustomButtonPrimary"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="13dp"
-                        android:layout_weight="1"
-                        android:text="Detail Produk"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

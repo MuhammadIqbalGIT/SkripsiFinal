@@ -3,23 +3,19 @@ package com.example.myapplicationskripsiiqbal3.ui.listProduct
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core.data.remote.request.DeleteProductRequest
 import com.example.core.di.RetrofitClient
 import com.example.core.domain.model.deleteProduct.ApiResponse
+import com.example.core.domain.model.product.ApiResponseProduct
 import com.example.core.domain.model.product.ProductModel
 import com.example.myapplicationskripsiiqbal3.databinding.FragmentListProductBinding
 import com.example.myapplicationskripsiiqbal3.ui.base.BaseFragment
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -54,6 +50,7 @@ class ListProductFragment : BaseFragment<FragmentListProductBinding>() {
             appbar.tvScreen.isVisible = false
             appbar.tilSearch.isVisible = true
         }
+        getListProduct("")
     }
 
     override fun FragmentListProductBinding.initEvent() {
@@ -66,19 +63,26 @@ class ListProductFragment : BaseFragment<FragmentListProductBinding>() {
                 etSearch.requestFocus()
             }
             etSearch.addTextChangedListener(object : TextWatcher {
-                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
                 override fun afterTextChanged(s: Editable?) {
                     val query = s.toString().trim()
+                    getListProduct(query)
                 }
             })
         }
 
         adapterProduct.onButtonDetailClick = {
             val action =
-                ListProductFragmentDirections.actionListProductFragmentToProductDetailFragment(it.id)
+                ListProductFragmentDirections.actionListProductFragmentToProductDetailFragment(it.id?:0)
             findNavController().navigate(action)
         }
 
@@ -88,7 +92,7 @@ class ListProductFragment : BaseFragment<FragmentListProductBinding>() {
 
 
         adapterProduct.onIconDeleteClick = {
-            deleteProduct(it.id)
+            deleteProduct(it.id?:0)
         }
         adapterProduct.onButtonChangeClick = {
             showBottomSheetProduct(it)
@@ -96,40 +100,59 @@ class ListProductFragment : BaseFragment<FragmentListProductBinding>() {
     }
 
 
-    private fun showBottomSheetProduct(item : ProductModel) {
+    private fun showBottomSheetProduct(item: ProductModel) {
         val sheetEditProduct = ListProductEditProductBottomSheetFragment.newInstance(item)
         sheetEditProduct.show(parentFragmentManager, "ListProductEditProductBottomSheetFragment")
     }
 
+    private fun getListProduct(search: String) {
+        val apiService = RetrofitClient.instance
 
-    override fun FragmentListProductBinding.initObserve() {
-        viewLifecycleOwner.lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.CREATED) {
-                RetrofitClient.instance.getProduct()
-                    .enqueue(object : Callback<ArrayList<ProductModel>> {
-                        override fun onResponse(
-                            call: Call<ArrayList<ProductModel>>,
-                            response: Response<ArrayList<ProductModel>>
-                        ) {
-                            response.body()?.let {
+        // Replace "Brand A" with the actual brand name you want to query
+        val call: Call<ApiResponseProduct> = apiService.getProduct(search)
+
+        call.enqueue(object : Callback<ApiResponseProduct> {
+            override fun onResponse(
+                call: Call<ApiResponseProduct>,
+                response: Response<ApiResponseProduct>
+            ) {
+                if (response.isSuccessful) {
+                    val apiResponse = response.body()
+                    if (apiResponse?.success == true) {
+                        val brandList = apiResponse.data?.products
+                        brandList?.let {
+                            if (it.isEmpty()) {
+                                //    showSnackbar("Tidak ada data")
+                                binding.llNoData.isVisible = true
+                                adapterProduct.submitList(null) // Clear the RecyclerView
+                            } else {
+                                binding.llNoData.isVisible = false
                                 adapterProduct.submitList(it)
-                                val textCount = "Total Produk Anda"
                                 val count = adapterProduct.itemCount
-                                binding.tvCount.text = "$textCount $count"
+                              //  binding.tvCount.text = "Total produk Anda ${count}"
                             }
                         }
-
-                        override fun onFailure(call: Call<ArrayList<ProductModel>>, t: Throwable) {
-                            // Handle failure
-                        }
-                    })
+                    } else {
+                        // Handle unsuccessful response
+                        val errorMessage = apiResponse?.message ?: "Unknown error"
+                        //   showSnackbar(errorMessage)
+                    }
+                } else {
+                    // Handle unsuccessful HTTP response
+//                    showSnackbar("Gagal mengambil data dari server")
+                }
             }
-        }
+
+            override fun onFailure(call: Call<ApiResponseProduct>, t: Throwable) {
+                // Handle network failure
+                // showSnackbar("Terdapat masalah jaringan")
+            }
+        })
     }
 
     fun deleteProduct(productId: Int) {
         val productService = RetrofitClient.instance
-        val request =  DeleteProductRequest(
+        val request = DeleteProductRequest(
             id = productId
         )
 
@@ -145,21 +168,21 @@ class ListProductFragment : BaseFragment<FragmentListProductBinding>() {
                     if (apiResponse?.success == true) {
                         val deletedProduct = apiResponse.data?.product
                         if (deletedProduct != null) {
-                           // showToast("Product deleted successfully: ${deletedProduct.nama}")
+                            // showToast("Product deleted successfully: ${deletedProduct.nama}")
                             // Handle the deleted product details as needed
                         } else {
                             //showToast("Deleted product details are null.")
                         }
                     } else {
-                       // handleDeleteFailure(apiResponse?.message)
+                        // handleDeleteFailure(apiResponse?.message)
                     }
                 } else {
-                  //  handleDeleteFailure("Server error. Please try again.")
+                    //  handleDeleteFailure("Server error. Please try again.")
                 }
             }
 
             override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
-               // handleDeleteFailure("Network error. Please check your connection.")
+                // handleDeleteFailure("Network error. Please check your connection.")
             }
         })
     }

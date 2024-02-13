@@ -116,6 +116,8 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>() {
                     findNavController().navigate(action)
                 }
                 MENU_PENJUALAN ->{
+                    val action = AccountFragmentDirections.actionAccountFragmentToSaleFragment()
+                    findNavController().navigate(action)
 
                 }
 

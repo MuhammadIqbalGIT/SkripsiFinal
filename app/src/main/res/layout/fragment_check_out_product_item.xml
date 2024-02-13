@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tvNameProduct"
+        style="@style/mediumTextBoldBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/public_sans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Cairan Semen Pelapis Keddsaaaaaaaaaaaaaap Air Sika Top 107 Plus 4 kg Set" />
+
+
+    <TextView
+        android:id="@+id/tvPrice"
+        style="@style/smallTextBoldBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameProduct"
+        tools:text="Rp 50,000" />
+
+    <TextView
+        android:id="@+id/textView7"
+        style="@style/smallTextBoldBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:text="X"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+        app:layout_constraintStart_toEndOf="@+id/tvPrice"
+        app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+
+    <TextView
+        android:id="@+id/tvItemStock"
+        style="@style/smallTextBoldBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toTopOf="@+id/textView7"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/tvUnit"
+        style="@style/smallTextBoldBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvItemStock"
+        app:layout_constraintStart_toEndOf="@+id/tvItemStock"
+        app:layout_constraintTop_toTopOf="@+id/tvItemStock"
+        tools:text="(pcs)" />
+
+
+    <TextView
+        android:id="@+id/tvTotalSubPrice"
+        style="@style/mediumTextBoldBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameProduct"
+        tools:text="Rp. 50,000" />
+
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

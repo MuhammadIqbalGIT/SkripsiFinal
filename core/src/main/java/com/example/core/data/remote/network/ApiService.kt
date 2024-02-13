@@ -10,6 +10,7 @@ import com.example.core.domain.model.addNewProduct.ProductData
 import com.example.core.domain.model.brand.BrandModel
 import com.example.core.domain.model.deleteProduct.ApiResponse
 import com.example.core.domain.model.login.LoginModel
+import com.example.core.domain.model.product.ApiResponseProduct
 import com.example.core.domain.model.product.ProductModel
 import retrofit2.Call
 import retrofit2.http.Body
@@ -40,7 +41,7 @@ interface ApiService {
      * Get Product
      **/
     @GET("product")
-    fun getProduct(): Call<ArrayList<ProductModel>>
+    fun getProduct(@Query("nama") search: String): Call<ApiResponseProduct>
 
 
     /**
